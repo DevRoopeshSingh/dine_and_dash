@@ -61,7 +61,7 @@ const BodyComponent = () => {
           </button>
         </div>
         <button
-          className="filter-btn ml-2  px-4 py-1 bg-gray-400 rounded-md"
+          className="filter-btn m-2  px-4 py-1 bg-gray-400 rounded-md"
           onClick={() => {
             const filterList = restaurantList.filter(
               (rest) => rest.info.avgRating > 4.2
@@ -72,13 +72,16 @@ const BodyComponent = () => {
           Top Rated Restaurant
         </button>
       </div>
-      <OfferContainer banners={bannerList} />
+      <div className="m-8">
+        <OfferContainer banners={bannerList} />
+      </div>
+     
 
-      <div className="restaurant-container">
-        <div className="flex mx-4 px-6 text-xl">
+      <div className="restaurant-container mx-5">
+        <div className="mx-4 px-6 text-xl ">
           <h1>Top restaurant chains in Bangalore</h1>
         </div>
-        <div className=" flex p-4 space-x-4 overflow-x-scroll">
+        <div className="flex p-4 space-x-4 flex-row flex-wrap justify-center items-stretch gap-4">
           {filteredRestaurant?.map((restaurant) => (
             <Link
               to={"/restaurants/" + restaurant.info.id}
